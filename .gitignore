@@ -1,0 +1,24 @@
+# Binaries
+**/bin/
+bin-int/
+Intermediates/
+
+# Python Binaries
+*.pyc
+
+# Log files
+*.Log
+
+# Visual Studio files and folder
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+**.csproj
+
+# Dictionaries
+scripts/__pycache__
+
+# Other files
+*.csv

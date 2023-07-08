@@ -1,0 +1,3 @@
+[submodule "Penkr/vendor/cryptopp"]
+	path = Penkr/vendor/cryptopp
+	url = https://github.com/weidai11/cryptopp

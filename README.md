@@ -1,11 +1,11 @@
 # Penkr <a href="https://github.com/Kirdow/Penkr/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg"></a>
-Penkr is a C++ port of [https://github.com/ohyicong/decrypt-chrome-passwords](ohyicong/decrypt-chrome-passwords). I made this because I wanted to show my family why they need a proper password manager and why not to store passwords directly in the browser. I decided to make this C++ port as the original one runs on Python and I don't wanna go mess around installing Python on her PC. This project runs on 2 exe files and 3 dll files, the rest is built into Windows with the C++ redistributable installation that most people already have installed.
+Penkr is a C++ port of [ohyicong/decrypt-chrome-passwords](https://github.com/ohyicong/decrypt-chrome-passwords). I made this because I wanted to show my family why they need a proper password manager and why not to store passwords directly in the browser. I decided to make this C++ port as the original one runs on Python and I don't wanna go mess around installing Python on her PC. This project runs on 2 exe files and 3 dll files, the rest is built into Windows with the C++ redistributable installation that most people already have installed.
 
 # Setting up
 This repository is a bit tricky to setup but premake should get most of it done for you.
 
 ### Pre-Requisites:
-- Penkr is using Visual Studio 2022. If you use another version of Visual Studio, you need to edit ``scripts/Win-GenProjects.bat`` and change ``vs2022`` to whichever IDE you use. For a list of all IDEs supported by premake, visit [https://premake.github.io/docs/using-premake](Premake's website).
+- Penkr is using Visual Studio 2022. If you use another version of Visual Studio, you need to edit ``scripts/Win-GenProjects.bat`` and change ``vs2022`` to whichever IDE you use. For a list of all IDEs supported by premake, visit [Premake's website](https://premake.github.io/docs/using-premake).
 
 ### Setup:
 1. Clone the repository. Remember to clone recursively ``git clone --recursive https://github.com/Kirdow/Penkr`` as it does use a submodule for Crypto++.
@@ -34,9 +34,9 @@ Only Chromium based browser are supported. The currently supported browsers are:
 - Microsoft Edge
 
 # Required DLLs
-- Crypto++ (see [https://www.cryptopp.com/](their website) and [https://github.com/weidai11/cryptopp](their github).) - This one is statically linked and shouldn't require a DLL. But it's ``.lib`` file is located in ``Penkr/vendor/cryptopp/x64/Output/cryptlib.lib``.
-- SQLiteCpp (see [https://srombauts.github.io/SQLiteCpp/](their website) and [https://github.com/SRombauts/SQLiteCpp](their github).) - This one is pre-compiled for the repository, and is located in ``Penkr/vendor/sqlite/`` with the ``.lib`` files at ``lib/sqlite3.lib`` and ``lib/SQLiteCpp.lib``, as well as the ``.dll`` files at ``dll/sqlite3.dll`` and ``dll/SQLiteCpp.dll``.
-- Crypt32 (see [Microsoft Docs](https://learn.microsoft.com/en-us/windows/win32/seccrypto/crypt32-dll-versions)) - This one is used the decrypt the initial key as is included with your Windows installation. This is simply linked as ``Crypt32.lib`` and is located at ``C:\Windows\System32\crypt32.dll``.
+- Crypto++ (see [their website](https://www.cryptopp.com/) and [their github](https://github.com/weidai11/cryptopp).) - This one is statically linked and shouldn't require a DLL. But it's ``.lib`` file is located in ``Penkr/vendor/cryptopp/x64/Output/cryptlib.lib``.
+- SQLiteCpp (see [their website](https://srombauts.github.io/SQLiteCpp/) and [their github](https://github.com/SRombauts/SQLiteCpp).) - This one is pre-compiled for the repository, and is located in ``Penkr/vendor/sqlite/`` with the ``.lib`` files at ``lib/sqlite3.lib`` and ``lib/SQLiteCpp.lib``, as well as the ``.dll`` files at ``dll/sqlite3.dll`` and ``dll/SQLiteCpp.dll``.
+- Crypt32 (see [Microsoft Docs](https://learn.microsoft.com/en-us/windows/win32/seccrypto/crypt32-dll-versions)) - This one is used the decrypt the initial key as is included with your Windows installation. This is simply linked as ``Crypt32.lib`` and is located at ``C:/Windows/System32/crypt32.dll``.
 
 # License
-This software is provided with [https://github.com/Kirdow/Penkr/blob/master/LICENSE](MIT License).
+This software is provided with [MIT License](https://github.com/Kirdow/Penkr/blob/master/LICENSE).

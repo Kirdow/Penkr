@@ -6,6 +6,8 @@
 #include <functional>
 #include <random>
 #include <optional>
+#include <iterator>
+#include <cstddef>
 
 #include <string>
 #include <array>
@@ -18,3 +20,9 @@
 #include <sstream>
 #include <fstream>
 #include <iostream>
+
+#include <filesystem>
+
+#ifdef KTN_PLATFORM_WINDOWS
+	#include <Windows.h>
+#endif

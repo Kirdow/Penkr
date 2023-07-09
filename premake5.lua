@@ -28,4 +28,5 @@ group ""
 
 group "Core"
     include "Penkr"
+    include "PenkrClear"
 group ""

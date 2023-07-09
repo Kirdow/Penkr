@@ -1,4 +1,3 @@
-#include "pch.hpp"
 #include "main.hpp"
 
 #ifdef KTN_PLATFORM_WINDOWS
@@ -18,12 +17,12 @@ int APIENTRY WinMain(HINSTANCE hInst, HINSTANCE hInstPrev, PSTR cmdline, int cmd
 
 int main(int argc, char** argv)
 {
-    main2(argc, argv);
+    return main2(argc, argv);
 }
 
 #endif
 
 int main2(int argc, char** argv)
 {
-    return Penkr::Main(argc, argv);
+    return Penkr::Clear();
 }

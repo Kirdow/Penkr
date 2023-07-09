@@ -1,5 +1,15 @@
 # Penkr <a href="https://github.com/Kirdow/Penkr/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg"></a>
-Penkr is a C++ port of [ohyicong/decrypt-chrome-passwords](https://github.com/ohyicong/decrypt-chrome-passwords). I made this because I wanted to show my family why they need a proper password manager and why not to store passwords directly in the browser. I decided to make this C++ port as the original one runs on Python and I don't wanna go mess around installing Python on her PC. This project runs on 2 exe files and 3 dll files, the rest is built into Windows with the C++ redistributable installation that most people already have installed.
+Penkr is a C++ port of [ohyicong/decrypt-chrome-passwords](https://github.com/ohyicong/decrypt-chrome-passwords). I made this because I wanted to show my family why they need a proper password manager and why not to store passwords directly in the browser.
+
+## Why not use the python script?
+I decided to make this C++ port as the original one runs on Python and I don't wanna go mess around installing Python on her PC. This project runs on 2 exe files and 2 dll files, the rest is built into Windows with the C++ redistributable installation that most people already have installed or linked statically.
+
+## And what IS 'Penkr'?
+The name consists of 2 parts.
+
+The first part is ``Pen`` which comes from ``Pen-testing`` which also comes from ``Penetration Testing``. But also, ``Pen`` is also what is used to describe ``Pen-drives`` which is something I carry with me all of the time, to both run portable Linux on any machine, as well as having most of my files with me.
+
+The second part is ``Kr`` which is the first two consonants in my nickname.
 
 # Setting up
 This repository is a bit tricky to setup but premake should get most of it done for you.

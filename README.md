@@ -16,8 +16,9 @@ This repository is a bit tricky to setup but premake should get most of it done 
 6. Once the build finishes, close Visual Studio.
 7. Now go back into the repository folder, and open ``Penkr.sln`` using Visual Studio.
 8. At the top, select either Debug, Release or Dist, then under ``Build``, click ``Build Solution``.
-9. Now in the repository folder, your binaries will be in the ``bin/`` directory.
-10. Some DLLs aren't automatically copied to the binary folder, in case you're missing DLL files after the build, you'll find their locations below.
+9. Now in the repository folder, your binaries will be in the ``bin/<config>/Penkr`` directory.
+10. In order for ``PenkrClear.exe`` to work with ``Penkr.exe`` it has to be moved to the same folder. Simply navigate to ``bin/<config>/PenkrClear`` and move ``PenkrClear.exe`` into ``bin/<config>/Penkr``.
+11. Some DLLs aren't automatically copied to the binary folder, in case you're missing DLL files after the build, you'll find their locations below.
 
 # Running the app
 - Run ``Penkr.exe`` to fetch the passwords. Current supported browsers are listed below. Once it's finished it will save all passwords to pass.csv in the current working directory.

@@ -8,11 +8,19 @@
 
 namespace Penkr::Utils
 {
+	// This is a constant getter for the Pass File name.
+	// Could have made this a const variable but it doesn't matter
+	// really since it's only used once.
 	const char* GetPassFile()
 	{
 		return "pass.csv";
 	}
 
+	// Get the data directory. This is for %localappdata% which evaluates to
+	// C:\Users\<username>\AppData\Local
+	// 
+	// std::filesystem::path doesn't actually support the environment variables
+	// so we need a platform specific conversion for this.
 	std::filesystem::path GetDataDirectory()
 	{
 		std::filesystem::path result;
@@ -36,6 +44,8 @@ namespace Penkr::Utils
 		return result;
 	}
 
+	// Get the absolute path of `User Data` and `Default` for the specific browser.
+	// This returns false if either of them does not exist.
 	bool GetAbsolutePath(const std::filesystem::path& directory, std::filesystem::path& userDataResult, std::filesystem::path& defaultResult)
 	{
 		auto local = GetDataDirectory();
@@ -54,6 +64,8 @@ namespace Penkr::Utils
 		return true;
 	}
 
+	// This reads the full content of a file depending on the path input.
+	// This is such a trivial thing to have easily available.
 	std::string ReadFile(const std::filesystem::path& filepath)
 	{
 		std::string result;
@@ -74,6 +86,7 @@ namespace Penkr::Utils
 		return result;
 	}
 
+	// This decodes the key used for decrypting the database.
 	std::string GetKey(const std::string& data)
 	{
 		std::string result = data;

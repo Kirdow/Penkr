@@ -20,6 +20,9 @@
 
 namespace Penkr::AES
 {
+	// Use Crypto++ to decrypt a cipher using the input key. This is specific
+	// for the current usecase, and is probably even simpler for a more generic
+	// usecase.
 	std::string DecryptAES(const std::string& cipher, const std::string& key)
 	{
 		if (cipher.empty()) return "";
@@ -54,6 +57,7 @@ namespace Penkr::AES
 		return decrypted;
 	}
 
+	// Normal base 64 decoder.
 	std::string Base64Decode(const std::string& str)
 	{
 		std::string decoded;
@@ -78,6 +82,7 @@ namespace Penkr::AES
 		return decoded;
 	}
 
+	// Use windows Crypt function to "unprotect" data for the current user account.
 	std::string Unprotect(const std::string& str)
 	{
 		DATA_BLOB cipher = { (DWORD)str.size(), (BYTE*)str.data() };

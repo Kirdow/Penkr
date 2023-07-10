@@ -32,8 +32,7 @@ project "Penkr"
     {
         "Crypt32.lib",
         "vendor/sqlite/lib/sqlite3.lib",
-        "vendor/sqlite/lib/SQLiteCpp.lib",
-        "vendor/cryptopp/x64/Output/Release/cryptlib.lib"
+        "vendor/sqlite/lib/SQLiteCpp.lib"
     }
 
     filter "system:windows"
@@ -46,13 +45,28 @@ project "Penkr"
         runtime "Debug"
         symbols "on"
 
+        links
+        {
+            "vendor/cryptopp/x64/Output/Debug/cryptlib.lib"
+        }
+
     filter "configurations:Release"
         defines "KTN_RELEASE"
         runtime "Release"
         optimize "on"
+
+        links
+        {
+            "vendor/cryptopp/x64/Output/Release/cryptlib.lib"
+        }
 
     filter "configurations:Dist"
         kind "WindowedApp"
         defines "KTN_DIST"
         runtime "Release"
         optimize "on"
+
+        links
+        {
+            "vendor/cryptopp/x64/Output/Release/cryptlib.lib"
+        }

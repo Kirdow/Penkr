@@ -2,6 +2,7 @@
 
 namespace Penkr
 {
+	// Row data when reading from PenkrDB.
 	struct PenkrValue
 	{
 		std::string Url;
@@ -15,6 +16,7 @@ namespace Penkr
 		operator bool() const { return !Password.empty(); }
 	};
 
+	// Iterator for PenkrDB to support for each loops.
 	class PenkrIterator
 	{
 	public:
@@ -79,6 +81,7 @@ namespace Penkr
 		PointerType m_Ptr;
 	};
 
+	// Database wrapper for loading user passwords.
 	class PenkrDB
 	{
 	public:

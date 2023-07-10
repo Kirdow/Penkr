@@ -3,14 +3,34 @@
 
 namespace Penkr
 {
-#define CHROME_DIR(str) std::filesystem::path(str)
-#define CHROME(a, b) CHROME_DIR(a) / CHROME_DIR(b)
+    // Normally browsers would be in a folder of
+    // /Brand/Browser/, but Chromium only has /Browser/,
+    // so we use a variadic function `Dir` to create
+    // a nested folder structure for each browser
+    template<typename T>
+    static std::filesystem::path Dir(const T& path)
+    {
+        return path;
+    }
 
+    template<typename T, typename...Args>
+    static std::filesystem::path Dir(const T& path, Args&&...args)
+    {
+        return path / Dir(std::forward<Args>(args)...);
+    }
+
+    // This is the full definition of supported browsers.
     std::vector<std::filesystem::path> Directories = {
-        CHROME("Google", "Chrome"),
-        CHROME("BraveSoftware", "Brave-Browser"),
-        CHROME("Microsoft", "Edge"),
-        CHROME("Opera Software", "Opera Stable"),
-        CHROME("Opera Software", "Opera GX Stable"),
+        // Google
+        Dir("Google", "Chrome"),
+        Dir("Google", "Chrome Beta"),
+        Dir("Google", "Chrome SxS"),
+        Dir("Chromium"),
+        // Opera
+        Dir("Opera Software", "Opera Stable"),
+        Dir("Opera Software", "Opera GX Stable"),
+        // Other
+        Dir("BraveSoftware", "Brave-Browser"),
+        Dir("Microsoft", "Edge"),
     };
 }
